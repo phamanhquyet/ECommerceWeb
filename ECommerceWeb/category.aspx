@@ -8,12 +8,19 @@
                 <div class="row">
                     <div class="col col-lg-3 col-xs-12">
                         <div class="category-block">
-                            <a href="#">Skin Care</a>
+                           <%-- <a href="#">Skin Care</a>
                             <a href="#">Laptop & PC</a>
                             <a href="#">Smartphone</a>
                             <a href="#">Fashion</a>
                             <a href="#">Sepatu</a>
-                            <a href="#">Electronic</a>
+                            <a href="#">Electronic</a>--%>
+                            <asp:DataList ID="DataList1" runat="server"  >
+                                 <ItemTemplate>
+                                    <asp:LinkButton ID="LinkButton1" runat="server" Text='<%# Eval("TenLoai") %>'
+                                    CommandArgument='<%# Eval("MaLoai") %>' OnClick="LinkButton1_Click">
+                                    </asp:LinkButton>
+                                 </ItemTemplate>
+                         </asp:DataList>
                         </div>
                     </div>
 
