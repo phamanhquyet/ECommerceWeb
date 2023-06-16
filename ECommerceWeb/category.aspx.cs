@@ -11,7 +11,7 @@ namespace ECommerceWeb
 {
     public partial class category : System.Web.UI.Page
     {
-		String conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\other-stub\ecommerce\ECommerceWeb\ECommerceWeb\App_Data\Product.mdf;Integrated Security=True";
+		String conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|Product.mdf;Integrated Security=True";
 		protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -38,5 +38,6 @@ namespace ECommerceWeb
 			Context.Items["ml"] = maloai;
 			Server.Transfer("detail.aspx");
 		}
+        
     }
 }

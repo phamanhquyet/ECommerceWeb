@@ -12,12 +12,26 @@ namespace ECommerceWeb
 {
     public partial class detail : System.Web.UI.Page
     {
-		String con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\other-stub\ecommerce\ECommerceWeb\ECommerceWeb\App_Data\Product.mdf;Integrated Security=True";
+		String con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|Product.mdf;Integrated Security=True";
 
 		protected void Page_Load(object sender, EventArgs e)
         {
+
 			if (Page.IsPostBack) return;
-			string q;
+            try
+            {
+                string q1 = "Select * from LoaiHang";
+                SqlDataAdapter da = new SqlDataAdapter(q1, con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                this.DataList2.DataSource = dt;
+                this.DataList2.DataBind();
+            }
+            catch (SqlException ex)
+            {
+                Response.Write(ex.Message);
+            }
+            string q;
 			if (Context.Items["ml"] == null)
 				q = "select * from MatHang";
 			else
@@ -48,6 +62,11 @@ namespace ECommerceWeb
 			Server.Transfer("detailItems.aspx");
 
 		}
-
-	}
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            string maloai = ((LinkButton)sender).CommandArgument;
+            Context.Items["ml"] = maloai;
+            Server.Transfer("detail.aspx");
+        }
+    }
 }
