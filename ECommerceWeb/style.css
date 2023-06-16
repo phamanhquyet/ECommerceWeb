@@ -194,6 +194,7 @@ body {
     padding-left: var(--padding-page);
     padding-right: var(--padding-page);
     margin-top: 70px;
+    height:auto;
 }
 
     .all-product h2 {

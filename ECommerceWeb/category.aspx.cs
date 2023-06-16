@@ -34,8 +34,8 @@ namespace ECommerceWeb
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-			string mahang = ((LinkButton)sender).CommandArgument;
-			Context.Items["ml"] = mahang;
+			string maloai = ((LinkButton)sender).CommandArgument;
+			Context.Items["ml"] = maloai;
 			Server.Transfer("detail.aspx");
 		}
     }

@@ -74,6 +74,7 @@
     </Content>
     <Content Include="category.aspx" />
     <Content Include="detail.aspx" />
+    <Content Include="detailItems.aspx" />
     <Content Include="fonts\LICENSE.txt" />
     <Content Include="Grid_library\grid.css" />
     <Content Include="Grid_library\index.html" />
@@ -84,6 +85,14 @@
     <Content Include="images\22.jpg" />
     <Content Include="images\31.jpg" />
     <Content Include="images\32.jpg" />
+    <Content Include="images\41.jpg" />
+    <Content Include="images\42.jpg" />
+    <Content Include="images\43.jpg" />
+    <Content Include="images\51.jpg" />
+    <Content Include="images\52.jpg" />
+    <Content Include="images\53.jpg" />
+    <Content Include="images\61.jpg" />
+    <Content Include="images\62.jpg" />
     <Content Include="images\bag-plus.png" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\cart.svg" />
@@ -112,6 +121,13 @@
     </Compile>
     <Compile Include="detail.aspx.designer.cs">
       <DependentUpon>detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="detailItems.aspx.cs">
+      <DependentUpon>detailItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="detailItems.aspx.designer.cs">
+      <DependentUpon>detailItems.aspx</DependentUpon>
     </Compile>
     <Compile Include="home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>

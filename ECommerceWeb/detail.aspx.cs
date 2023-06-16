@@ -22,8 +22,8 @@ namespace ECommerceWeb
 				q = "select * from MatHang";
 			else
 			{
-				string mahang = Context.Items["ml"].ToString();
-				q = "select * from MatHang where MaHang = '" + mahang + "'";
+				string maloai = Context.Items["ml"].ToString();
+				q = "select * from MatHang where MaLoai = '" + maloai + "'";
 			}
 			try
 			{
@@ -40,5 +40,14 @@ namespace ECommerceWeb
 				Response.Write(ex.Message);
 			}
 		}
-    }
+
+		protected void LinkButton1_Click(object sender, EventArgs e)
+		{
+			string mahang = ((LinkButton)sender).CommandArgument;
+			Context.Items["ml"] = mahang;
+			Server.Transfer("detailItems.aspx");
+
+		}
+
+	}
 }

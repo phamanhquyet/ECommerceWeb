@@ -28,6 +28,8 @@
                         <div class="all-product">
                             <div class="container-fluid">
                                 <div class="row product-list">
+
+
                                     <div class="product-item col col-lg-4 col-md-6 col-xs-12">
                                         <a class="product-link" href="#">
                                             <div class="product-image">

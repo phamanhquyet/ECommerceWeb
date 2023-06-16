@@ -33,25 +33,20 @@
         </div>
     </div>--%>
         
-        <h3>test</h3>
-     <h3>test</h3>
-     <h3>test</h3>
-    	<asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal">
-            <ItemTemplate>
-                <div class="SP">
-                    <asp:Label  ID="Label1" runat="server" Text='<%# Eval("TenHang") %>'></asp:Label>
+    	<asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal" >
+            <ItemTemplate> 
+                    <asp:Image   ID="Image1" runat="server"  Height=" 150px" Width=" 200px"  ImageUrl='<%# Eval("HinhAnh") %>' />
                     <br />
-                    <asp:Image   ID="Image1" runat="server"  Height=" 150px"  ImageUrl='<%# Eval("HinhAnh") %>' />
+                    <asp:Label  ID="Label1" runat="server" Text='<%# Eval("TenHang") %>'></asp:Label>
                     <br />
                     <asp:Label  ID="Label2" runat="server" Text='<%# Eval("DonGia") %>'></asp:Label>
                     <br />
-                    <asp:Label ID="Label3" runat="server" Text='<%# Eval("MoTa") %>'></asp:Label>
-                    <br />
+             <%--       <asp:Label ID="Label3" runat="server" Text='<%# Eval("MoTa") %>'></asp:Label>
+                    <br />--%>
                 </div>
-                <%--<asp:LinkButton ID="LinkButton1" runat="server" 
+             <asp:LinkButton ID="LinkButton1" runat="server" 
                 CommandArgument='<%# Eval("MaHang") %>'
-               <OnClick="LinkButton1_Click">Chi tiết</asp:LinkButton>--%>
+                OnClick="LinkButton1_Click">Chi tiết</asp:LinkButton>
             </ItemTemplate>
-    </asp:DataList>
-
+             </asp:DataList>
 </asp:Content>
