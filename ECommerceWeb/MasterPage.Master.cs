@@ -16,7 +16,10 @@ namespace ECommerceWeb
             {
                 btnLogin.Text = "Login";
             }
-            else
+            else if (Request.Cookies["TenDN"].Value == "")
+            {
+                btnLogin.Text = "Login";
+            } else
             {
                 lblTenDN.Text = Request.Cookies["TenDN"].Value;
                 btnLogin.Text = "Logout";
@@ -34,7 +37,7 @@ namespace ECommerceWeb
             {
                 Response.Cookies["TenDN"].Value = "";
                 Request.Cookies["TenDN"].Value = "";
-                Request.Cookies["TenDN"].Expires = DateTime.UtcNow.AddYears(-1); ;
+                Request.Cookies["TenDN"].Expires = DateTime.UtcNow.AddYears(-1); 
                 Response.Redirect("home.aspx");
             }
         }
