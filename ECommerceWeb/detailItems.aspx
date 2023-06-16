@@ -3,9 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal" CssClass="tbl">
-        <ItemTemplate>
-            <%-- <div class ="product-items tbl-item">
+    <div class="container mt-10 my-2">
+        <asp:Repeater ID="DataList1" runat="server">
+            <ItemTemplate>
+                <%-- <div class ="product-items tbl-item">
                         <div class="img-container"> 
                             <asp:Image   ID="Image1" runat="server"  Height=" 150px" Width=" 200px"  ImageUrl='<%# Eval("HinhAnh") %>' />
                         </div>
@@ -19,26 +20,40 @@
                         <br />
                     </div>--%>
 
-            <div class="tbl-item">
-                <div class="img-container">
-                    <asp:Image ID="Image1" runat="server" Height="300px" Width=" 250px" ImageUrl='<%# Eval("HinhAnh") %>' />
-                </div>
-                <br />
-                <h3>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("TenHang") %>' CssClass="py-1"></asp:Label>
-                </h3>
-                <br />
-                <h4>
-                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("DonGia") %>' CssClass="py-1"></asp:Label>
-                </h4>
-                <br />
-                <%--       <asp:Label ID="Label3" runat="server" Text='<%# Eval("MoTa") %>'></asp:Label>
+                <div class="detail-item row">
+                    <div class="col col-lg-5 col-xs-12">
+                        <div class="img-container img-container-large">
+                            <asp:Image ID="Image1" runat="server" Height="100%" Width="100%" ImageUrl='<%# Eval("HinhAnh") %>' />
+                        </div>
+                    </div>
+                    <div class="col col-lg-7 col-xs-12">
+                        <h2 class ="py-1">
+                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("TenHang") %>' CssClass="py-1"></asp:Label>
+                        </h2>
+                        <h4 class ="py-1">
+                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("DonGia", "{0:#,### đ}") %>' CssClass="py-1 product-price"></asp:Label>
+                        </h4>
+                        <%--       <asp:Label ID="Label3" runat="server" Text='<%# Eval("MoTa") %>'></asp:Label>
                     <br />--%>
-                <div>
-                    <asp:Label ID="Label3" runat="server" Text='<%# Eval("MoTa") %>'></asp:Label>
-                </div>
+                        <div class ="py-1">
+                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("MoTa") %>' CssClass="product-desc"></asp:Label>
+                        </div>
 
-            </div>
-        </ItemTemplate>
-    </asp:DataList>
+                        <div class ="py-1">
+                            <span>Số lượng</span>
+                            <asp:TextBox ID="Quantity" TextMode="Number" ClientIDMode="Static" runat="server"></asp:TextBox>
+                        </div>
+
+                        <div class="btn-primary my-2">
+                            <asp:LinkButton ID="BtnAddToCart" runat="server"
+                                CommandArgument='<%# Eval("MaHang") %>'
+                                OnClick="BtnAddToCart_Click">Thêm vào giỏ hàng</asp:LinkButton>
+                        </div>
+
+                    </div>
+
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+    </div>
 </asp:Content>
