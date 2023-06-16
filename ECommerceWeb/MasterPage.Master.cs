@@ -13,17 +13,16 @@ namespace ECommerceWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("Testing1");
-            System.Diagnostics.Debug.WriteLine(Request.Cookies["TenDN"]);
+            System.Diagnostics.Debug.WriteLine(Request.Cookies["TenDN"].Value);
             //string temp = Response.Cookies["TenDN"].Value;
-            if (Request.Cookies["TenDN"] == null)
+            if (Request.Cookies["TenDN"].Value == "" || Request.Cookies["TenDN"] == null)
             {
-                Response.Cookies["TenDN"].Value = null;
                 btnLogin.Text = "Login";
             }
             else
             {
+                lblTenDN.Text = Request.Cookies["TenDN"].Value;
                 btnLogin.Text = "Logout";
-                //Response.Cookies["TenDN"].Value = temp;
             }
 
         }
@@ -31,18 +30,21 @@ namespace ECommerceWeb
         protected void btnLogin_Click(object sender, EventArgs e)
         {
 
-            //System.Diagnostics.Debug.WriteLine("Testing2");
-            //System.Diagnostics.Debug.WriteLine(Response.Cookies["TenDN"].Value);
+            System.Diagnostics.Debug.WriteLine("Testing2");
+            System.Diagnostics.Debug.WriteLine(Request.Cookies["TenDN"].Value);
             //string temp = Response.Cookies["TenDN"].Value;
-            if (Response.Cookies["TenDN"] == null)
+            if (btnLogin.Text == "Login")
             {
                 //Response.Cookies["TenDN"].Value = temp; 
                 Response.Redirect("login.aspx");
             }
             else
             {
-                Response.Cookies["TenDN"].Value = null;
-                Server.Transfer("home.aspx");
+                lblTenDN.Text = Request.Cookies["TenDN"].Value;
+                Response.Cookies["TenDN"].Value = "";
+                Request.Cookies["TenDN"].Value = "";
+                Request.Cookies["TenDN"].Expires = DateTime.UtcNow.AddYears(-1); ;
+                Response.Redirect("home.aspx");
             }
         }
 

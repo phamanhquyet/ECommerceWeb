@@ -1,6 +1,13 @@
-:root {
+﻿:root {
     --primary: #FF8A00;
     --padding-page: 80px;
+    --text-primary: #212B36;
+    --text-grey: #637381;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.4;
+    color: var(--text-primary);
 }
 
 * {
@@ -35,13 +42,18 @@ body {
 }
 
 .btn {
-    width: 85px;
-    height: 45px;
+    width: 85px !important;
+    height: 45px !important;
     outline: none;
     box-shadow: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-primary);
 }
 
 /* HEADER */
@@ -127,6 +139,7 @@ body {
 #main {
     margin-top: 65px;
     margin-bottom: 80px;
+    min-height: calc(100vh - 185px);
 }
 
 /* Banner */
@@ -194,6 +207,7 @@ body {
     padding-left: var(--padding-page);
     padding-right: var(--padding-page);
     margin-top: 70px;
+    height: auto;
 }
 
     .all-product h2 {
@@ -531,4 +545,64 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.categoy-link {
+    padding-bottom: 0.8rem;
+    padding-top: 0.8rem;
+}
+
+.tbl {
+    margin: 0 auto;
+    padding-top: 2.5rem;
+}
+
+    .tbl tbody tr td {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-size: 16px;
+    }
+
+.tbl-item {
+    padding: 1.5rem 1rem;
+    margin-right: 3rem;
+    margin-left: 3rem;
+    border: 1px solid #E7EBF0;
+    border-radius: 6px;
+    width: 350px;
+}
+
+.pt-2 {
+    padding-top: 2rem;
+}
+
+.py-1 {
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+}
+
+.center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container {
+    height: 320px;
+    text-align: center;
+}
+
+.btn-primary {
+    border-radius: 5px;
+    padding: 1rem 1.5rem;
+    background-color: var(--primary);
+    display: inline-block;
+}
+
+    .btn-primary > * {
+        color: white;
+    }
+
+.product-title {
+    height: 45px;
 }

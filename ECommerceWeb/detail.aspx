@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="detail.aspx.cs" Inherits="ECommerceWeb.detail" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="detail-page">
+    <%--<div class="detail-page">
         <div class="container-fluid">
             <div class="row product-detail">
                 <div class="col col-lg-5">
@@ -31,5 +32,63 @@
                 </div>
             </div>
         </div>
+    </div>--%>
+    <div id="category">
+        <div class="category-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col col-lg-3 col-xs-12">
+                        <div class="category-block">
+                            <asp:DataList ID="DataList2" runat="server">
+                                <ItemTemplate>
+                                    <div class="categoy-link">
+                                        <asp:LinkButton ID="LinkButton2" runat="server" Text='<%# Eval("TenLoai") %>'
+                                            CommandArgument='<%# Eval("MaLoai") %>' OnClick="LinkButton2_Click">
+                                        </asp:LinkButton>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:DataList>
+                        </div>
+                    </div>
+                     <div class="container-lg pt-2">
+
+                    <asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal" CssClass="tbl">
+
+                        <ItemTemplate>
+                            <div class="tbl-item">
+                                <div class="img-container">
+                                    <asp:Image ID="Image1" runat="server" Height="300px" Width=" 250px" ImageUrl='<%# Eval("HinhAnh") %>' />
+                                </div>
+                                <br />
+                                <h3 class="product-title">
+                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("TenHang") %>' CssClass="py-1"></asp:Label>
+                                </h3>
+                                <br />
+                                <h4>
+                                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("DonGia") %>' CssClass="py-1"></asp:Label>
+                                </h4>
+                                <br />
+                                <%--       <asp:Label ID="Label3" runat="server" Text='<%# Eval("MoTa") %>'></asp:Label>
+                                <br />--%>
+
+                                <div class="btn-primary">
+                                    <asp:LinkButton ID="LinkButton1" runat="server"
+                                        CommandArgument='<%# Eval("MaHang") %>'
+                                        OnClick="LinkButton1_Click">Chi tiết</asp:LinkButton>
+                                </div>
+                            </div>
+
+                        </ItemTemplate>
+
+                    </asp:DataList>
+
     </div>
+                </div>
+            </div>
+        </div>
+    
+
+    
+   
+
 </asp:Content>

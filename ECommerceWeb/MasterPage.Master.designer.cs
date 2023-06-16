@@ -33,13 +33,13 @@ namespace ECommerceWeb
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// btnSingup control.
+        /// lblTenDN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSingup;
+        protected global::System.Web.UI.WebControls.Label lblTenDN;
 
         /// <summary>
         /// btnLogin control.

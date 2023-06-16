@@ -14,7 +14,7 @@
     <form id="form1" runat="server">
         <header id="header">
         <div class="logo">
-            <a href="./index.html" class="">Creative Store</a>
+            <a href="./home.aspx" class="">Creative Store</a>
         </div>
 
         <nav id="navigation">
@@ -33,7 +33,7 @@
         </nav>
 
         <div class="authentication">
-            <asp:Button ID="btnSingup" class="btn btn-sign" runat="server" Text="Sign Up" />
+            <asp:Label ID="lblTenDN" runat="server" Text=""></asp:Label>
             <asp:Button ID="btnLogin" class="btn btn-login" runat="server" Text="Login"  OnClick="btnLogin_Click"/>
 
 <%--            <button class="btn btn-sign"></button>
