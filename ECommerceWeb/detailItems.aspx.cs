@@ -12,7 +12,7 @@ namespace ECommerceWeb
 {
 	public partial class detailItems : System.Web.UI.Page
 	{
-		String con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\viettelstore\Source\Repos\ECommerceWeb\ECommerceWeb\App_Data\Product.mdf;Integrated Security=True";
+		String con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\other-stub\ecommerce\ECommerceWeb\ECommerceWeb\App_Data\Product.mdf;Integrated Security=True";
 
 		protected void Page_Load(object sender, EventArgs e)
 		{

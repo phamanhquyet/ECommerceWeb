@@ -11,7 +11,7 @@ namespace ECommerceWeb
 {
     public partial class category : System.Web.UI.Page
     {
-		String conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\viettelstore\Source\Repos\ECommerceWeb\ECommerceWeb\App_Data\Product.mdf;Integrated Security=True";
+		String conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\other-stub\ecommerce\ECommerceWeb\ECommerceWeb\App_Data\Product.mdf;Integrated Security=True";
 		protected void Page_Load(object sender, EventArgs e)
         {
 
