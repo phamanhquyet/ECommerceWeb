@@ -127,6 +127,7 @@ body {
 #main {
     margin-top: 65px;
     margin-bottom: 80px;
+    min-height: calc(100vh - 185px);
 }
 
 /* Banner */
@@ -532,4 +533,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.categoy-link {
+    padding-bottom: 0.8rem;
+    padding-top: 0.8rem;
 }

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="detail.aspx.cs" Inherits="ECommerceWeb.detail" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -32,21 +33,29 @@
             </div>
         </div>
     </div>--%>
-        
-    	<asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal" >
-            <ItemTemplate> 
-                    <asp:Image   ID="Image1" runat="server"  Height=" 150px" Width=" 200px"  ImageUrl='<%# Eval("HinhAnh") %>' />
-                    <br />
-                    <asp:Label  ID="Label1" runat="server" Text='<%# Eval("TenHang") %>'></asp:Label>
-                    <br />
-                    <asp:Label  ID="Label2" runat="server" Text='<%# Eval("DonGia") %>'></asp:Label>
-                    <br />
-             <%--       <asp:Label ID="Label3" runat="server" Text='<%# Eval("MoTa") %>'></asp:Label>
+    <div class="container-lg">
+        <div class="row">
+            <asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
+
+                <ItemTemplate>
+                    <div class="col-lg-4 col-md-6 col--12">
+                        <asp:Image ID="Image1" runat="server" Height=" 150px" Width=" 200px" ImageUrl='<%# Eval("HinhAnh") %>' />
+                        <br />
+                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("TenHang") %>'></asp:Label>
+                        <br />
+                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("DonGia") %>'></asp:Label>
+                        <br />
+                        <%--       <asp:Label ID="Label3" runat="server" Text='<%# Eval("MoTa") %>'></asp:Label>
                     <br />--%>
-                </div>
-             <asp:LinkButton ID="LinkButton1" runat="server" 
-                CommandArgument='<%# Eval("MaHang") %>'
-                OnClick="LinkButton1_Click">Chi tiết</asp:LinkButton>
-            </ItemTemplate>
-             </asp:DataList>
+
+                        <asp:LinkButton ID="LinkButton1" runat="server"
+                            CommandArgument='<%# Eval("MaHang") %>'
+                            OnClick="LinkButton1_Click">Chi tiết</asp:LinkButton>
+                    </div>
+                </ItemTemplate>
+            </asp:DataList>
+        </div>
+
+    </div>
+
 </asp:Content>

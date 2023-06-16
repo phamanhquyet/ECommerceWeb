@@ -1,26 +1,29 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="category.aspx.cs" Inherits="ECommerceWeb.category" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div id="category">
+    <div id="category">
         <div class="category-page">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col col-lg-3 col-xs-12">
                         <div class="category-block">
-                           <%-- <a href="#">Skin Care</a>
+                            <%--<a href="#">Skin Care</a>
                             <a href="#">Laptop & PC</a>
                             <a href="#">Smartphone</a>
                             <a href="#">Fashion</a>
                             <a href="#">Sepatu</a>
                             <a href="#">Electronic</a>--%>
-                            <asp:DataList ID="DataList1" runat="server"  >
-                                 <ItemTemplate>
-                                    <asp:LinkButton ID="LinkButton1" runat="server" Text='<%# Eval("TenLoai") %>'
-                                    CommandArgument='<%# Eval("MaLoai") %>' OnClick="LinkButton1_Click">
-                                    </asp:LinkButton>
-                                 </ItemTemplate>
-                         </asp:DataList>
+                            <asp:DataList ID="DataList1" runat="server">
+                                <ItemTemplate>
+                                    <div class="categoy-link">
+                                        <asp:LinkButton ID="LinkButton1" runat="server" Text='<%# Eval("TenLoai") %>'
+                                            CommandArgument='<%# Eval("MaLoai") %>' OnClick="LinkButton1_Click">
+                                        </asp:LinkButton>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:DataList>
                         </div>
                     </div>
 
@@ -38,8 +41,10 @@
 
                                             <p class="category-name">Laptop & PC</p>
                                             <h3 class="product-name">ASUS X441UV</h3>
-                                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh
-                                                sit amet commodo....</p>
+                                            <p class="desc">
+                                                consectetur adipiscing elit duis tristique sollicitudin nibh
+                                                sit amet commodo....
+                                            </p>
                                             <div class="buy-container">
                                                 <span class="price">$ 2,800</span>
                                                 <button class="btn-buy btn">
@@ -58,8 +63,10 @@
 
                                             <p class="category-name">Laptop & PC</p>
                                             <h3 class="product-name">ASUS X441UV</h3>
-                                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh
-                                                sit amet commodo....</p>
+                                            <p class="desc">
+                                                consectetur adipiscing elit duis tristique sollicitudin nibh
+                                                sit amet commodo....
+                                            </p>
                                             <div class="buy-container">
                                                 <span class="price">$ 2,800</span>
                                                 <button class="btn-buy btn">
@@ -78,8 +85,10 @@
 
                                             <p class="category-name">Laptop & PC</p>
                                             <h3 class="product-name">ASUS X441UV</h3>
-                                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh
-                                                sit amet commodo....</p>
+                                            <p class="desc">
+                                                consectetur adipiscing elit duis tristique sollicitudin nibh
+                                                sit amet commodo....
+                                            </p>
                                             <div class="buy-container">
                                                 <span class="price">$ 2,800</span>
                                                 <button class="btn-buy btn">
@@ -98,8 +107,10 @@
 
                                             <p class="category-name">Laptop & PC</p>
                                             <h3 class="product-name">ASUS X441UV</h3>
-                                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh
-                                                sit amet commodo....</p>
+                                            <p class="desc">
+                                                consectetur adipiscing elit duis tristique sollicitudin nibh
+                                                sit amet commodo....
+                                            </p>
                                             <div class="buy-container">
                                                 <span class="price">$ 2,800</span>
                                                 <button class="btn-buy btn">
@@ -118,8 +129,10 @@
 
                                             <p class="category-name">Laptop & PC</p>
                                             <h3 class="product-name">ASUS X441UV</h3>
-                                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh
-                                                sit amet commodo....</p>
+                                            <p class="desc">
+                                                consectetur adipiscing elit duis tristique sollicitudin nibh
+                                                sit amet commodo....
+                                            </p>
                                             <div class="buy-container">
                                                 <span class="price">$ 2,800</span>
                                                 <button class="btn-buy btn">
@@ -138,8 +151,10 @@
 
                                             <p class="category-name">Laptop & PC</p>
                                             <h3 class="product-name">ASUS X441UV</h3>
-                                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh
-                                                sit amet commodo....</p>
+                                            <p class="desc">
+                                                consectetur adipiscing elit duis tristique sollicitudin nibh
+                                                sit amet commodo....
+                                            </p>
                                             <div class="buy-container">
                                                 <span class="price">$ 2,800</span>
                                                 <button class="btn-buy btn">
@@ -158,8 +173,10 @@
 
                                             <p class="category-name">Laptop & PC</p>
                                             <h3 class="product-name">ASUS X441UV</h3>
-                                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh
-                                                sit amet commodo....</p>
+                                            <p class="desc">
+                                                consectetur adipiscing elit duis tristique sollicitudin nibh
+                                                sit amet commodo....
+                                            </p>
                                             <div class="buy-container">
                                                 <span class="price">$ 2,800</span>
                                                 <button class="btn-buy btn">
@@ -178,8 +195,10 @@
 
                                             <p class="category-name">Laptop & PC</p>
                                             <h3 class="product-name">ASUS X441UV</h3>
-                                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh
-                                                sit amet commodo....</p>
+                                            <p class="desc">
+                                                consectetur adipiscing elit duis tristique sollicitudin nibh
+                                                sit amet commodo....
+                                            </p>
                                             <div class="buy-container">
                                                 <span class="price">$ 2,800</span>
                                                 <button class="btn-buy btn">
