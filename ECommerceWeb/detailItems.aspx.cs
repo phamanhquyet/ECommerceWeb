@@ -43,9 +43,13 @@ namespace ECommerceWeb
 
         protected void BtnAddToCart_Click(object sender, EventArgs e)
         {
-
+			string script;
             if (Request.Cookies["TenDN"] == null)
             {
+
+                script = "alert(\"You need to login\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
                 return;
             }
 			LinkButton mua = (LinkButton)sender;
@@ -75,7 +79,7 @@ namespace ECommerceWeb
 			sqlConnection.Close();
 
 
-            string script = "alert(\"Add to cart successful\");";
+            script = "alert(\"Add to cart successful\");";
             ScriptManager.RegisterStartupScript(this, GetType(),
                                   "ServerControlScript", script, true);
         }
