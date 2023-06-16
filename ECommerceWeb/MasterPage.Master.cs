@@ -12,7 +12,7 @@ namespace ECommerceWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Cookies["TenDN"].Value == "" || Request.Cookies["TenDN"] == null)
+            if ( Request.Cookies["TenDN"] == null)
             {
                 btnLogin.Text = "Login";
             }
@@ -32,7 +32,6 @@ namespace ECommerceWeb
             }
             else
             {
-                lblTenDN.Text = Request.Cookies["TenDN"].Value;
                 Response.Cookies["TenDN"].Value = "";
                 Request.Cookies["TenDN"].Value = "";
                 Request.Cookies["TenDN"].Expires = DateTime.UtcNow.AddYears(-1); ;

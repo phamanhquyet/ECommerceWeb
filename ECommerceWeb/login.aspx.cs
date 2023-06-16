@@ -34,10 +34,7 @@ namespace ECommerceWeb
             }
             if (table.Rows.Count != 0)
             {
-                HttpCookie cookie = HttpContext.Current.Response.Cookies.AllKeys.Contains("TenDN")
-        ? HttpContext.Current.Response.Cookies["TenDN"]
-        : HttpContext.Current.Request.Cookies["TenDN"];
-                cookie.Value = ten;
+                Response.Cookies["TenDN"].Value = ten;
                 Server.Transfer("home.aspx");
             }
             else this.Login1.FailureText = "Tên đăng nhập hay mật khẩu không đúng!";

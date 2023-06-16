@@ -10,7 +10,6 @@
                         <div class="img-container"> 
                             <asp:Image   ID="Image1" runat="server"  Height=" 150px" Width=" 200px"  ImageUrl='<%# Eval("HinhAnh") %>' />
                         </div>
-                        
                         <br />
                         <asp:Label  ID="Label1" runat="server" Text='<%# Eval("TenHang") %>'></asp:Label>
                         <br />
@@ -33,15 +32,14 @@
                         <h4 class ="py-1">
                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("DonGia", "{0:#,### đ}") %>' CssClass="py-1 product-price"></asp:Label>
                         </h4>
-                        <%--       <asp:Label ID="Label3" runat="server" Text='<%# Eval("MoTa") %>'></asp:Label>
-                    <br />--%>
+                     
                         <div class ="py-1">
                             <asp:Label ID="Label3" runat="server" Text='<%# Eval("MoTa") %>' CssClass="product-desc"></asp:Label>
                         </div>
 
                         <div class ="py-1">
                             <span>Số lượng</span>
-                            <asp:TextBox ID="Quantity" TextMode="Number" ClientIDMode="Static" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtQuantity" TextMode="Number" min ="1" ClientIDMode="Static" runat="server"></asp:TextBox>
                         </div>
 
                         <div class="btn-primary my-2">

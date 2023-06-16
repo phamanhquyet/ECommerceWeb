@@ -17,26 +17,29 @@ namespace ECommerceWeb
         {
             if (Page.IsPostBack) return;
             string q;
-            if (Context.Items["ml"] == null)
-                q = "select * from LOAIHANG";
-            else
-            {
-                string maloai = Context.Items["ml"].ToString();
-                q = "select * from LOAIHANG where MaLoai = '" + maloai + "'";
-            }
+          
+                q = "select * from MatHang";
             try
             {
-                //SqlDataAdapter da = new SqlDataAdapter(q, con);
-                //DataTable dt = new DataTable();
-                //da.Fill(dt);
-                //this.DataList1.DataSource = dt;
-                //this.DataList1.DataBind();
-
+                SqlDataAdapter da = new SqlDataAdapter(q, con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                this.dtl_AllSP.DataSource = dt;
+                this.dtl_AllSP.DataBind();
             }
             catch (SqlException ex)
             {
-                //Response.Write(ex.Message);
+                Response.Write(ex.Message);
             }
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            string mahang = ((LinkButton)sender).CommandArgument;
+            Context.Items["ml"] = mahang;
+            Server.Transfer("detailItems.aspx");
+
+        }
     }
+
 }

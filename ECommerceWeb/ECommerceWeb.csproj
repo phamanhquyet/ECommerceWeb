@@ -72,6 +72,7 @@
     <Content Include="App_Data\Product_log.ldf">
       <DependentUpon>Product.mdf</DependentUpon>
     </Content>
+    <Content Include="cart.aspx" />
     <Content Include="category.aspx" />
     <Content Include="detail.aspx" />
     <Content Include="detailItems.aspx" />
@@ -109,6 +110,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="category.aspx.cs">
       <DependentUpon>category.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

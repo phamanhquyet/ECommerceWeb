@@ -7,214 +7,40 @@
             <img src="./images/banner.jpg" alt="Banner">
         </div>
 
-        <%--<div class="product-category">
-            <h3>Product Category</h3>
-
-            <div class="container-fluid">
-                
-              <%--  <div class="row category-list">
-                    <div class="category-item col col-lg-2">
-                        <a href="#">
-                            <img src="./images/skin-care.jpg" alt="Skin Care">
-                            <p>Skin Care</p>                            
-                        </a>
-                    </div>
-
-                    <div class="category-item col col-lg-2">
-                        <a href="#">
-                            <img src="./images/LaptopPC.jpg" alt="Laptop & PC">
-                            <p>Laptop & PC</p>
-                        </a>
-                    </div>
-
-                    <div class="category-item col col-lg-2">
-                        <a href="#">
-                            <img src="./images/Smartphone.jpg" alt="Smartphone">
-                            <p>Smartphone</p>
-                        </a>
-                    </div>
-
-                    <div class="category-item col col-lg-2">
-                        <a href="#">
-                            <img src="./images/Fashion.jpg" alt="Fashion">
-                            <p>Fashion</p>
-                        </a>
-                    </div>
-
-                    <div class="category-item col col-lg-2">
-                        <a href="#">
-                            <img src="./images/Sepatu.jpg" alt="Sepatu">
-                            <p>Sepatu</p>
-                        </a>
-                    </div>
-
-                    <div class="category-item col col-lg-2">
-                        <a href="#">
-                            <img src="./images/Elektronik.jpg" alt="Electronic">
-                            <p>Electronic</p>
-                        </a>
-                    </div>
-                </div>--%>
-            </div>
-        </div>
+         
 
         <div class="all-product">
             <h2>ALL PRODUCTS</h2>
-            <div class="container-fluid">
-                <div class="row product-list">
-                    <div class="product-item col col-lg-3">
-                        <a class="product-link" href="#">
-                            <div class="product-image">
-                                <img src="./images/product-1.jpg" alt="Product">
-                            </div>
-    
-                            <p class="category-name">Laptop & PC</p>
-                            <h3 class="product-name">ASUS X441UV</h3>
-                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo....</p>
-                            <div class="buy-container">
-                                <span class="price">$ 2,800</span>
-                                <button class="btn-buy btn">
-                                    <span>Buy</span>
-                                    <img src="./images/bag-plus.png" alt="">
-                                </button>
-                            </div>
-                        </a>
-                    </div>
+            <div class="" style="width:100%">
+                        <div class="tbl row">
+                            <asp:DataList ID="dtl_AllSP" runat="server" RepeatDirection="Horizontal" RepeatColumns="5" ItemStyle-Width="20%">
+                                <ItemTemplate>
+                                    <div class="tbl-item">
+                                        <div class="img-container img-container-medium">
+                                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("HinhAnh") %>' />
+                                        </div>
+                                        <br />
+                                        <h3 class="product-title">
+                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("TenHang") %>' CssClass="py-1"></asp:Label>
+                                        </h3>
+                                        <br />
+                                        <h4>
+                                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("DonGia", "{0:#,### đ}") %>' CssClass="py-1"></asp:Label>
+                                        </h4>
+                                        <br />
+                                        <div class="btn-primary">
+                                            <asp:LinkButton ID="LinkButton1" runat="server"
+                                                CommandArgument='<%# Eval("MaHang") %>'
+                                                OnClick="LinkButton1_Click">Chi tiết</asp:LinkButton>
+                                        </div>
+                                    </div>
 
-                    <div class="product-item col col-lg-3">
-                        <a class="product-link" href="#">
-                            <div class="product-image">
-                                <img src="./images/product-1.jpg" alt="Product">
-                            </div>
-    
-                            <p class="category-name">Laptop & PC</p>
-                            <h3 class="product-name">ASUS X441UV</h3>
-                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo....</p>
-                            <div class="buy-container">
-                                <span class="price">$ 2,800</span>
-                                <button class="btn-buy btn">
-                                    <span>Buy</span>
-                                    <img src="./images/bag-plus.png" alt="">
-                                </button>
-                            </div>
-                        </a>
-                    </div>
 
-                    <div class="product-item col col-lg-3">
-                        <a class="product-link" href="#">
-                            <div class="product-image">
-                                <img src="./images/product-1.jpg" alt="Product">
-                            </div>
-    
-                            <p class="category-name">Laptop & PC</p>
-                            <h3 class="product-name">ASUS X441UV</h3>
-                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo....</p>
-                            <div class="buy-container">
-                                <span class="price">$ 2,800</span>
-                                <button class="btn-buy btn">
-                                    <span>Buy</span>
-                                    <img src="./images/bag-plus.png" alt="">
-                                </button>
-                            </div>
-                        </a>
-                    </div>
+                                </ItemTemplate>
+                            </asp:DataList>
+                        </div>
 
-                    <div class="product-item col col-lg-3">
-                        <a class="product-link" href="#">
-                            <div class="product-image">
-                                <img src="./images/product-1.jpg" alt="Product">
-                            </div>
-    
-                            <p class="category-name">Laptop & PC</p>
-                            <h3 class="product-name">ASUS X441UV</h3>
-                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo....</p>
-                            <div class="buy-container">
-                                <span class="price">$ 2,800</span>
-                                <button class="btn-buy btn">
-                                    <span>Buy</span>
-                                    <img src="./images/bag-plus.png" alt="">
-                                </button>
-                            </div>
-                        </a>
                     </div>
-
-                    <div class="product-item col col-lg-3">
-                        <a class="product-link" href="#">
-                            <div class="product-image">
-                                <img src="./images/product-1.jpg" alt="Product">
-                            </div>
-    
-                            <p class="category-name">Laptop & PC</p>
-                            <h3 class="product-name">ASUS X441UV</h3>
-                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo....</p>
-                            <div class="buy-container">
-                                <span class="price">$ 2,800</span>
-                                <button class="btn-buy btn">
-                                    <span>Buy</span>
-                                    <img src="./images/bag-plus.png" alt="">
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="product-item col col-lg-3">
-                        <a class="product-link" href="#">
-                            <div class="product-image">
-                                <img src="./images/product-1.jpg" alt="Product">
-                            </div>
-    
-                            <p class="category-name">Laptop & PC</p>
-                            <h3 class="product-name">ASUS X441UV</h3>
-                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo....</p>
-                            <div class="buy-container">
-                                <span class="price">$ 2,800</span>
-                                <button class="btn-buy btn">
-                                    <span>Buy</span>
-                                    <img src="./images/bag-plus.png" alt="">
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="product-item col col-lg-3">
-                        <a class="product-link" href="#">
-                            <div class="product-image">
-                                <img src="./images/product-1.jpg" alt="Product">
-                            </div>
-    
-                            <p class="category-name">Laptop & PC</p>
-                            <h3 class="product-name">ASUS X441UV</h3>
-                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo....</p>
-                            <div class="buy-container">
-                                <span class="price">$ 2,800</span>
-                                <button class="btn-buy btn">
-                                    <span>Buy</span>
-                                    <img src="./images/bag-plus.png" alt="">
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="product-item col col-lg-3">
-                        <a class="product-link" href="#">
-                            <div class="product-image">
-                                <img src="./images/product-1.jpg" alt="Product">
-                            </div>
-    
-                            <p class="category-name">Laptop & PC</p>
-                            <h3 class="product-name">ASUS X441UV</h3>
-                            <p class="desc">consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo....</p>
-                            <div class="buy-container">
-                                <span class="price">$ 2,800</span>
-                                <button class="btn-buy btn">
-                                    <span>Buy</span>
-                                    <img src="./images/bag-plus.png" alt="">
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </asp:Content>

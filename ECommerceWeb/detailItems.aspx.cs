@@ -34,7 +34,6 @@ namespace ECommerceWeb
 				da.Fill(dt);
 				this.DataList1.DataSource = dt;
 				this.DataList1.DataBind();
-
 			}
 			catch (SqlException ex)
 			{
@@ -44,7 +43,41 @@ namespace ECommerceWeb
 
         protected void BtnAddToCart_Click(object sender, EventArgs e)
         {
-           
+
+            if (Request.Cookies["TenDN"] == null)
+            {
+                return;
+            }
+			LinkButton mua = (LinkButton)sender;
+			string mahang = mua.CommandArgument.ToString();
+			RepeaterItem item = (RepeaterItem)mua.Parent;
+			string soluong = ((TextBox)item.FindControl("txtQuantity")).Text ;
+            System.Diagnostics.Debug.WriteLine("Test add cart");
+            System.Diagnostics.Debug.WriteLine(Request.Cookies["TenDN"].Value);
+            string ten = Request.Cookies["TenDN"].Value;
+			SqlConnection sqlConnection = new SqlConnection(con);
+			sqlConnection.Open();
+			string q = "select * from donhang where TENDANGNHAP = '" + ten + "' and MAHANG = '" + mahang + "'";
+			SqlCommand command = new SqlCommand(q, sqlConnection);
+			SqlDataReader reader = command.ExecuteReader();
+			if (reader.Read())
+			{
+				reader.Close();
+				command = new SqlCommand("UPDATE  DONHANG SET SOLUONG = SOLUONG + " + soluong 
+					+ " where TENDANGNHAP = '" + ten + "' and Mahang = '" + mahang + "'", sqlConnection);
+			} else
+			{
+				reader.Close();
+				command = new SqlCommand("INSERT INTO DONHANG (TENDANGNHAP, MAHANG, SOLUONG) VALUES('" + ten + "', '"
+					+ mahang + "', " + soluong + ")", sqlConnection);
+			}
+			command.ExecuteNonQuery();
+			sqlConnection.Close();
+
+
+            string script = "alert(\"Add to cart successful\");";
+            ScriptManager.RegisterStartupScript(this, GetType(),
+                                  "ServerControlScript", script, true);
         }
     }
 }
