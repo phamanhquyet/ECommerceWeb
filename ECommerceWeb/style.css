@@ -625,10 +625,20 @@ a {
     height: 100%;
 }
 
-    .img-container-large img {
-        border-radius: 10px;
-        border: 2px solid #E7EBF0;
-    }
+.img-container img{
+    margin: 0 auto;
+}
+
+.img-container-large img {
+    border-radius: 10px;
+    border: 2px solid #E7EBF0;
+}
+
+.img-container-medium 
+{
+    height: 235px;
+  width: 175px;
+}
 
 .detail-item {
     font-size: 16px;

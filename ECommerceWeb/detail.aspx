@@ -55,8 +55,8 @@
                             <asp:Repeater ID="DataList1" runat="server">
                                 <ItemTemplate>
                                     <div class="tbl-item col-lg-3 col-md-6 col-xs-12">
-                                        <div class="img-container">
-                                            <asp:Image ID="Image1" runat="server" Height="275px" Width=" 175px" ImageUrl='<%# Eval("HinhAnh") %>' />
+                                        <div class="img-container img-container-medium">
+                                            <asp:Image ID="Image1" runat="server" Height="100%" Width=" 100%" ImageUrl='<%# Eval("HinhAnh") %>' />
                                         </div>
                                         <br />
                                         <h3 class="product-title">
