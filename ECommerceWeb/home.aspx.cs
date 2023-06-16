@@ -26,11 +26,11 @@ namespace ECommerceWeb
             }
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter(q, con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                this.DataList1.DataSource = dt;
-                this.DataList1.DataBind();
+                //SqlDataAdapter da = new SqlDataAdapter(q, con);
+                //DataTable dt = new DataTable();
+                //da.Fill(dt);
+                //this.DataList1.DataSource = dt;
+                //this.DataList1.DataBind();
 
             }
             catch (SqlException ex)

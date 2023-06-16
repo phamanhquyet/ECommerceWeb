@@ -12,9 +12,6 @@ namespace ECommerceWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("Testing1");
-            System.Diagnostics.Debug.WriteLine(Request.Cookies["TenDN"].Value);
-            //string temp = Response.Cookies["TenDN"].Value;
             if (Request.Cookies["TenDN"].Value == "" || Request.Cookies["TenDN"] == null)
             {
                 btnLogin.Text = "Login";
@@ -29,13 +26,8 @@ namespace ECommerceWeb
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-
-            System.Diagnostics.Debug.WriteLine("Testing2");
-            System.Diagnostics.Debug.WriteLine(Request.Cookies["TenDN"].Value);
-            //string temp = Response.Cookies["TenDN"].Value;
             if (btnLogin.Text == "Login")
             {
-                //Response.Cookies["TenDN"].Value = temp; 
                 Response.Redirect("login.aspx");
             }
             else

@@ -50,45 +50,39 @@
                             </asp:DataList>
                         </div>
                     </div>
-                     <div class="container-lg pt-2">
+                    <div class="col col-lg-9 col-xs-12">
+                        <div class="tbl row">
+                            <asp:Repeater ID="DataList1" runat="server">
+                                <ItemTemplate>
+                                    <div class="tbl-item col-lg-3 col-md-6 col-xs-12">
+                                        <div class="img-container img-container-medium">
+                                            <asp:Image ID="Image1" runat="server" Height="100%" Width=" 100%" ImageUrl='<%# Eval("HinhAnh") %>' />
+                                        </div>
+                                        <br />
+                                        <h3 class="product-title">
+                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("TenHang") %>' CssClass="py-1"></asp:Label>
+                                        </h3>
+                                        <br />
+                                        <h4>
+                                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("DonGia", "{0:#,### đ}") %>' CssClass="py-1"></asp:Label>
+                                        </h4>
+                                        <br />
+                                        <div class="btn-primary">
+                                            <asp:LinkButton ID="LinkButton1" runat="server"
+                                                CommandArgument='<%# Eval("MaHang") %>'
+                                                OnClick="LinkButton1_Click">Chi tiết</asp:LinkButton>
+                                        </div>
+                                    </div>
 
-                    <asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal" CssClass="tbl">
+                                </ItemTemplate>
 
-                        <ItemTemplate>
-                            <div class="tbl-item">
-                                <div class="img-container">
-                                    <asp:Image ID="Image1" runat="server" Height="300px" Width=" 250px" ImageUrl='<%# Eval("HinhAnh") %>' />
-                                </div>
-                                <br />
-                                <h3 class="product-title">
-                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("TenHang") %>' CssClass="py-1"></asp:Label>
-                                </h3>
-                                <br />
-                                <h4>
-                                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("DonGia") %>' CssClass="py-1"></asp:Label>
-                                </h4>
-                                <br />
-                                <%--       <asp:Label ID="Label3" runat="server" Text='<%# Eval("MoTa") %>'></asp:Label>
-                                <br />--%>
+                            </asp:Repeater>
+                        </div>
 
-                                <div class="btn-primary">
-                                    <asp:LinkButton ID="LinkButton1" runat="server"
-                                        CommandArgument='<%# Eval("MaHang") %>'
-                                        OnClick="LinkButton1_Click">Chi tiết</asp:LinkButton>
-                                </div>
-                            </div>
-
-                        </ItemTemplate>
-
-                    </asp:DataList>
-
-    </div>
+                    </div>
                 </div>
             </div>
         </div>
-    
-
-    
-   
+    </div>
 
 </asp:Content>

@@ -41,5 +41,10 @@ namespace ECommerceWeb
 				Response.Write(ex.Message);
 			}
 		}
-	}
+
+        protected void BtnAddToCart_Click(object sender, EventArgs e)
+        {
+           
+        }
+    }
 }

@@ -68,5 +68,7 @@ namespace ECommerceWeb
             Context.Items["ml"] = maloai;
             Server.Transfer("detail.aspx");
         }
+
+
     }
 }

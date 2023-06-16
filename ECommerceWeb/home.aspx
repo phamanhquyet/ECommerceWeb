@@ -7,20 +7,11 @@
             <img src="./images/banner.jpg" alt="Banner">
         </div>
 
-        <div class="product-category">
+        <%--<div class="product-category">
             <h3>Product Category</h3>
 
             <div class="container-fluid">
-                <asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal" RepeatColumns ="6" >
-                    <ItemTemplate>
-                        <div  class="category-item">
-                            <a href="#">
-                                <asp:Image ID="ImgProduct" Cssclass="img" runat="server" ImageUrl='<%# "~/images/" + Eval("HINHANH") %>' />
-                                <asp:Label ID="LblProduct" Cssclass="p" runat="server" Text='<%# Eval("TENLOAI") %>'></asp:Label>
-                            </a>
-                        </div>
-                    </ItemTemplate>
-                </asp:DataList>
+                
               <%--  <div class="row category-list">
                     <div class="category-item col col-lg-2">
                         <a href="#">
