@@ -33,8 +33,11 @@
         </nav>
 
         <div class="authentication">
-            <button class="btn btn-sign">Sign In</button>
-            <button class="btn btn-login">Login</button>
+            <asp:Button ID="btnSingup" class="btn btn-sign" runat="server" Text="Sign Up" />
+            <asp:Button ID="btnLogin" class="btn btn-login" runat="server" Text="Login"  OnClick="btnLogin_Click"/>
+
+<%--            <button class="btn btn-sign"></button>
+            <button class="btn btn-login">Login</button>--%>
         </div>
     </header>
 

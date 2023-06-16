@@ -26,7 +26,6 @@ namespace ECommerceWeb
             }
             try
             {
-
                 SqlDataAdapter da = new SqlDataAdapter(q, con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -36,7 +35,7 @@ namespace ECommerceWeb
             }
             catch (SqlException ex)
             {
-                Response.Write(ex.Message);
+                //Response.Write(ex.Message);
             }
         }
     }
